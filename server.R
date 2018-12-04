@@ -8,6 +8,8 @@ library("dplyr")
 library("countrycode")
 library(mapproj)
 
+source("q2.R")
+
 ## Setting current directory
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -16,7 +18,6 @@ file_name <- "www/carousel.html"
 homepage_html <- readChar(file_name, file.info(file_name)$size)
 
 ## Reading the data 
-
 ## Phuongle's data
 data <- read.csv("Data/data.csv", stringsAsFactors = FALSE)
 updated_data <- data %>% 
@@ -122,5 +123,11 @@ server <- function(input, output, session) {
                             input$continent))
     }
     plot
+  })
+  
+  # Line chart
+  output$q2 <- renderPlot({
+    ExpectedYearsOfSchooling(input$femaleMaleSelect, input$femaleMaleYear[1], 
+                             input$femaleMaleYear[2], input$femaleMaleCountry)
   })
 }
