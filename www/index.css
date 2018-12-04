@@ -55,3 +55,7 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+.form-group {
+  color: black;
+}

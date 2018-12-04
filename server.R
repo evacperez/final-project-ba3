@@ -6,26 +6,29 @@ library("ggplot2")
 library("maps")
 library("dplyr")
 library("countrycode")
+library(mapproj)
 
 ## Setting current directory
-#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ## Setting html homepage
 file_name <- "www/carousel.html"
 homepage_html <- readChar(file_name, file.info(file_name)$size)
 
 ## Reading the data 
+
 ## Phuongle's data
-setwd("~/Documents/info201/final-project-ba3/Data")
-data <- read.csv("data.csv", stringsAsFactors = FALSE)
+data <- read.csv("Data/data.csv", stringsAsFactors = FALSE)
 updated_data <- data %>% 
   mutate(Continent = countrycode(data$Country, 'country.name', 'continent')) 
 colnames(updated_data)[2] <- "region"
-updated_data$region <- gsub('\\s+', '', updated_data$region)
-updated_data$region <- paste0(substring(updated_data$region, 1, 1), 
-                              tolower(substring(updated_data$region, 2)))
-world_area <- map_data("world")
+# updated_data$region <- gsub('\\s+', '', updated_data$region)
+# updated_data$region <- paste0(substring(updated_data$region, 1, 1),
+#                               tolower(substring(updated_data$region, 2)))
+updated_data$region <- substring(paste0(updated_data$region), 2)
 
+world_area <- map_data("world")
+world_area$region[world_area$region == "UK"] <- "United Kingdom"
 
 ## Defining server 
 server <- function(input, output, session) {
@@ -61,7 +64,8 @@ server <- function(input, output, session) {
       world_data <- select(world_data, long, lat, group, order, region, 
                            subregion, Continent, paste0("X", input$year))
       colnames(world_data)[8] <- "year"
-            ggplot(world_data, aes(x = long, y = lat, group = group)) +
+      
+      ggplot(world_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = world_data$year)) +
 #        geom_point(aes(long, lat, group = group)) +
 #        geom_text(aes(long, lat, label = region, group = group),
@@ -69,17 +73,18 @@ server <- function(input, output, session) {
 #                      size  = 3) +
         scale_fill_gradient(low="mediumpurple1",high="mediumpurple4") +
         labs(title = paste("The number of schooling years in countries of", input$continent),
-             fill = "Schooling Years (years)") 
+             fill = "Schooling Years (years)") + coord_quickmap()
     }
     else {
       continent_map_data <- world_data %>%
         filter(Continent == input$continent) 
       colnames(continent_map_data)[8] <- "year"
+      
       ggplot(continent_map_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = continent_map_data$year)) +
         scale_fill_gradient(low="darkorange",high="darkorange4") +
         labs(title = paste("The number of schooling years in countries of", input$continent),
-             fill = "Schooling Years (years)") 
+             fill = "Schooling Years (years)")  + coord_quickmap()
     }
   })
   
@@ -97,7 +102,7 @@ server <- function(input, output, session) {
           vjust = 0,
           color = "grey34",
           size = 2) +  
-        scale_y_continuous(breaks=c(seq(0, 15, 1)), limits = c(0, 15)) +
+        scale_y_continuous(breaks=c(seq(0, 15, 1)), limits = c(0, 25)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 5)) +
         ylab("The number of schooling years") +
         xlab("All countries in the world") +
@@ -117,7 +122,7 @@ server <- function(input, output, session) {
           vjust = 0,
           color = "grey34",
           size = 3) +  
-        scale_y_continuous(breaks=c(seq(0, 15, 1)), limits = c(0, 15)) +
+        scale_y_continuous(breaks=c(seq(0, 15, 1)), limits = c(0, 25)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
         ylab("The number of schooling years") +
         xlab(paste0("Countries in ", input$continent, " continent")) +
