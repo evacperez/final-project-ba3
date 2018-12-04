@@ -22,11 +22,7 @@ data <- read.csv("Data/data.csv", stringsAsFactors = FALSE)
 updated_data <- data %>% 
   mutate(Continent = countrycode(data$Country, 'country.name', 'continent')) 
 colnames(updated_data)[2] <- "region"
-# updated_data$region <- gsub('\\s+', '', updated_data$region)
-# updated_data$region <- paste0(substring(updated_data$region, 1, 1),
-#                               tolower(substring(updated_data$region, 2)))
 updated_data$region <- substring(paste0(updated_data$region), 2)
-
 world_area <- map_data("world")
 world_area$region[world_area$region == "UK"] <- "United Kingdom"
 
@@ -67,10 +63,6 @@ server <- function(input, output, session) {
       
       ggplot(world_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = world_data$year)) +
-#        geom_point(aes(long, lat, group = group)) +
-#        geom_text(aes(long, lat, label = region, group = group),
-#                      color = 'black',
-#                      size  = 3) +
         scale_fill_gradient(low="mediumpurple1",high="mediumpurple4") +
         labs(title = paste("The number of schooling years in countries of", input$continent),
              fill = "Schooling Years (years)") + coord_quickmap()

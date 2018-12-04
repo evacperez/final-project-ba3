@@ -56,7 +56,7 @@ ui <- fluidPage(
                              tabPanel("Bar Chart", plotOutput("continent_bar", width = 900, height = 600))
                  )
                )
-               ))
+      ))
     
   ),
   
