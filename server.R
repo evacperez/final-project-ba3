@@ -1,4 +1,6 @@
+
 ## This is the server logic of a Shiny web application. 
+source("q2.R")
 
 ## Loading packages
 library("shiny")
@@ -7,7 +9,6 @@ library("maps")
 library("dplyr")
 library("countrycode")
 library(mapproj)
-
 ## Setting current directory
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -16,7 +17,6 @@ file_name <- "www/carousel.html"
 homepage_html <- readChar(file_name, file.info(file_name)$size)
 
 ## Reading the data 
-
 ## Phuongle's data
 data <- read.csv("Data/data.csv", stringsAsFactors = FALSE)
 updated_data <- data %>% 
@@ -44,9 +44,13 @@ server <- function(input, output, session) {
     #session$sendCustomMessage("finishHandler", "finished")
   })
   
-  ## Introduction tabPanel Output
+
+  output$create <- renderText({
+    "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
+  })
+
   output$intro <- renderText({
-    "Jeff"
+    "An Introduction to our Project..."
   })
   
   ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
@@ -122,5 +126,11 @@ server <- function(input, output, session) {
                             input$continent))
     }
     plot
+  })
+  
+  # Line chart
+  output$q2 <- renderPlot({
+    ExpectedYearsOfSchooling(input$femaleMaleSelect, input$femaleMaleYear[1], 
+                             input$femaleMaleYear[2], input$femaleMaleCountry)
   })
 }
