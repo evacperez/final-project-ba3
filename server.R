@@ -1,3 +1,4 @@
+source("q2.R")
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -20,7 +21,15 @@ server <- function(input, output, session) {
     #session$sendCustomMessage("finishHandler", "finished")
   })
   
+  output$create <- renderText({
+    "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
+  })
+  
   output$intro <- renderText({
-    "Jeff"
+    "An Introduction to our Project..."
+  })
+  
+  output$q2 <- renderPlot({
+    ExpectedYearsOfSchooling(input$femaleMaleSelect, input$femaleMaleYear[1], input$femaleMaleYear[2], input$femaleMaleCountry)
   })
 }
