@@ -7,7 +7,6 @@ ui <- fluidPage(
     tags$link(rel = "stylesheet", type = "text/css", href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css"),
     tags$script(src = "index.js", type = "text/javascript")
   ),
-  
   titlePanel("Expected Years Of Schooling"),
   tabsetPanel(id = "main",
     tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),

@@ -1,4 +1,6 @@
+
 ## This is the server logic of a Shiny web application. 
+source("q2.R")
 
 ## Loading packages
 library("shiny")
@@ -7,9 +9,6 @@ library("maps")
 library("dplyr")
 library("countrycode")
 library(mapproj)
-
-source("q2.R")
-
 ## Setting current directory
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -45,9 +44,13 @@ server <- function(input, output, session) {
     #session$sendCustomMessage("finishHandler", "finished")
   })
   
-  ## Introduction tabPanel Output
+
+  output$create <- renderText({
+    "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
+  })
+
   output$intro <- renderText({
-    "Jeff"
+    "An Introduction to our Project..."
   })
   
   ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)

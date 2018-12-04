@@ -12,7 +12,7 @@ Our team, group BA3, will be working with the “Human Development Data (1990-20
 
 **Do Western nations have a higher or lower expected years of schooling rate compared to Eastern nations?**
 
-**How do male and female expected years of schooling rates compare over the years for all the countries with data available?**
+**How do male and female expected years of schooling rates compare over the years for individual countries with data available?**
 
 **When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of schooling rate compared to developed nations, and if so, by how much of a gap?**
 

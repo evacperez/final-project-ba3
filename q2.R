@@ -42,11 +42,11 @@ ExpectedYearsOfSchooling <- function(femaleMaleSelect, yearStart, yearEnd, femal
   ## - variable: year
   ## - value: numeric
   return(ggplot(melt, aes(x = factor(variable), y = value, color = Country, group = Country, show.legend = FALSE)) +       
-           geom_line(show.legend = FALSE) + geom_point(show.legend = FALSE) +
-           ggtitle("Expected Years of Schooling of Different Gender Demographics in Chosen Country") +
-           geom_line(color = "#4b2e83", alpha = 0.75) +
-           geom_point(color = "#b7a57a", alpha = 0.75) +
-           labs(x = "Selected Year(s)", y = "Years of Schooling") +
-           theme(plot.title = element_text(color="#666666", face="bold", hjust=0.5)) +
-           theme(axis.title = element_text(color="#666666", face="bold")))
+    geom_line(show.legend = FALSE) + geom_point(show.legend = FALSE) +
+      ggtitle("Expected Years of Schooling of Different Gender Demographics in Chosen Country") +
+      geom_line(color = "#4b2e83", alpha = 0.75) +
+      geom_point(color = "#b7a57a", alpha = 0.75) +
+      labs(x = "Selected Year(s)", y = "Years of Schooling") +
+      theme(plot.title = element_text(color="#666666", face="bold", hjust=0.5)) +
+      theme(axis.title = element_text(color="#666666", face="bold")))
 }
