@@ -59,7 +59,5 @@ ui <- fluidPage(
       ))
     
   ),
-  
   tags$br()
-  
 )
