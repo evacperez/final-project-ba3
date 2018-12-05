@@ -47,7 +47,8 @@ ui <- fluidPage(
     tabPanel(title = "Continents", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
              # A summary about these charts related to continent
-             p("Are there any difference in expected years of schooling for both male and female between different continents and different years in the world?"),
+             p("Are there any difference in expected years of schooling for both male and female between different 
+               continents and different years in the world?"),
              p(" The following map and bar chart give the descriptive information
                 and comparison about the number of schooling years between different continents in different years. 
                 To explore the data visualization, the map and chart can be filtered by a specific continent button or 
