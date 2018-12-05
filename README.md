@@ -63,7 +63,7 @@ Our fifth tab introduces our second question, _How do male and female expected y
 Our sixth tab introduces our third question, _When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of schooling rate compared to developed nations, and if so, by how much of a gap?_ The UN's categorization can be found [here](https://unstats.un.org/unsd/methodology/m49/). This visualization displays a barchart where the user can choose between Developed and Developing countries and which year of data they prefer to see. The data displayed shows each country in the correct categorization and their comparing expected years of schooling rate for the selected year.
 
 
-Our seventh tab include links to charities and other organization with aim in creating equity in education systems worldwide.Our goal is for people to recognize the patterns and feeling emotionally charged to take action in get involved in creating education systems that benefit all children.
+Our seventh tab include links to charities and other organization with aim in creating equity in education systems worldwide. Our goal is for people to recognize the patterns and feeling emotionally charged to take action in get involved in creating education systems that benefit all children.
 
 
 Public repository on GitHub: https://github.com/evagj/final-project-ba3

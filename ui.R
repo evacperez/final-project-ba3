@@ -126,7 +126,15 @@ ui <- fluidPage(
   ),
   tabPanel(title = "Developing and Developed Nations", value = "q3",
            # Title of shiny app page
-           titlePanel("UN Developed Nations vs. Developing Nations"),
+           titlePanel(strong("UN Developed Nations vs. Developing Nations")),
+           p("This visualization displays a barchart where the user can choose between Developed and 
+             Developing countries and which year of data they prefer to see. The data displayed shows 
+             each country in the correct categorization and their comparing expected years of schooling 
+             rate for the selected year."),
+           h3("Data"),
+           p("We did not create the country categories on our own. We used the United Nations
+             list of developed and developing nations."),
+           a("The categories can be found here.", href = "https://unstats.un.org/unsd/methodology/m49/"),
            
            # Creates sidebar layout 
            sidebarLayout(
