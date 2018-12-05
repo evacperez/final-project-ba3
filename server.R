@@ -158,7 +158,7 @@ server <- function(input, output, session) {
     # Regions were determined by UN classifications.
     developed <-  c("Albania", "Andorra", "Australia", "Austria", "Belarus", "Belgium",
                     "Bosnia and Herzegovina", "Bulgaria", "Canada", "Croatia", "Cyprus", "Czech Republic",
-                    "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", 
+                    "Denmark", "Etonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", 
                     "Ireland", "Israel", "Italy", "Japan", "Latvia", "Liechtenstein", "Lithuania", 
                     "Luxembourg", "Malta", "Montenegro", "Netherlands", "New Zealand", "Norway", "Poland", 
                     "Portugal", "Romania", "Russia", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain",
@@ -175,7 +175,7 @@ server <- function(input, output, session) {
       ggplot(bar_data, aes(x = Country, y = data)) + 
         geom_bar(stat = "identity", fill = "#7CA7BE") +
         scale_y_continuous(breaks=c(seq(0, 20, 5)), limits = c(0, 20)) +
-        theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+        theme(axis.text = element_text(angle = 90, hjust = 1)) +
         xlab("UN Countries from Data") +
         ylab("Expected Years of Schooling") + 
         ggtitle(paste0(input$nations, " Nations Expected Years of Schooling in ",
@@ -191,7 +191,7 @@ server <- function(input, output, session) {
       ggplot(bar_data, aes(x = Country, y = data)) + 
         geom_bar(stat = "identity", fill = "#7CA7BE") +
         scale_y_continuous(breaks=c(seq(0, 20, 5)), limits = c(0, 20)) +
-        theme(axis.text.x = element_text(angle = 90, hjust = 1, size =4)) +
+        theme(axis.text = element_text(angle = 90, hjust = 1, size =4)) +
         xlab("UN Countries from Data") +
         ylab("Expected Years of Schooling") + 
         ggtitle(paste0(input$nations, " Nations Expected Years of Schooling in ",

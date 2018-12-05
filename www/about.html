@@ -10,10 +10,10 @@
     </div>
 
     <div class="row profile-row">
-        <div class="col-xs-3 col-sm-3 img-container" data-toggle="tooltip" title="Eva Perez" data-placement="bottom">
+        <div class="col-xs-3 col-sm-3 img-container" data-toggle="tooltip" title="Eva Perez" data-placement="bottom" data-content="">
             <img src="assets/profile.jpg" />
         </div>
-        <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Jeff Zhang" data-placement="bottom">
+        <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Jeff Zhang" data-placement="bottom" data-content="">
             <img src="assets/profile.jpg" />
         </div>
         <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Josely Anne Ongoco" data-placement="bottom"
@@ -24,7 +24,7 @@
         ">
             <img src="assets/profile.jpg" />
         </div>
-        <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Phuong Le" data-placement="bottom">
+        <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Phuong Le" data-placement="bottom" data-content="">
             <img src="assets/profile.jpg" />
         </div>
     </div>
@@ -33,5 +33,8 @@
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
         $('[data-toggle="tooltip"]').popover();
+        $('.img-container').click(function(e) {
+            $('.img-container').not(this).popover('hide');
+        });
     });
 </script>
