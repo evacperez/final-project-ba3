@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
 body {
     background-color: black;
     color: white;
     width: 100%;
+    font-family: 'Oxygen';
 }
 
 .carousel {

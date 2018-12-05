@@ -8,28 +8,40 @@ ui <- fluidPage(
     tags$script(src = "index.js", type = "text/javascript")
   ),
   titlePanel("How education availability has changed between 1990 and 2017"),
+  
   tabsetPanel(id = "main",
-    tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),
+    tabPanel(title = "Home", value = "home", htmlOutput("home")),
     tabPanel(title = "Creators", value = "creators", htmlOutput("creators")),
-    tabPanel(title = "About", value = "intro", 
+    tabPanel(title = "About", value = "intro",
              titlePanel("About Our Project"),
-             p("Our project analyzes the trends of the UN’s database on expected years of schooling 
-               around the world. We divide up the information so our user can interact with the data to 
+             p("Our project analyzes the trends of the UN’s database on expected years of schooling
+               around the world. We divide up the information so our user can interact with the data to
                see how certain demographics have different levels of development."),
              h3("Data"),
-             p("Our team worked on with “Human Development Data (1990-2017)”) from 
-               the United Nations Development Programme linked to the World Bank Dataset. 
-               Our project will be based on CSV files generated from there. 
-               We have chosen to study Education and analyze the three subcategories: 
-               Expected years of schooling (years), Expected years of schooling, female (years), 
+             p("Our team worked on with “Human Development Data (1990-2017)”) from
+               the United Nations Development Programme linked to the World Bank Dataset.
+               Our project will be based on CSV files generated from there.
+               We have chosen to study Education and analyze the three subcategories:
+               Expected years of schooling (years), Expected years of schooling, female (years),
                Expected years of schooling, male (years)."),
              a("The data can be found here", href = "http://hdr.undp.org/en/data"),
              h3("Audience"),
-             p("The target audience would be economists devoted to education: 
-               people interested in demographics within the educational system throughout the nation. 
-               More often, these are individuals who are social scientists studying the relationship 
+             p("The target audience would be economists devoted to education:
+               people interested in demographics within the educational system throughout the nation.
+               More often, these are individuals who are social scientists studying the relationship
                between human behavior and the levels of development in various countries across the world"),
              h3("Big Questions"),
+             p("Our team project will answer the following questions for our honed audience:"),
+             p("1. Do Western nations have a higher or lower expected years of schooling rate compared to Eastern nations?"),
+             p("2. How do male and female expected years of schooling rates compare over the years for all the countries with data available?"),
+             p("3. When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of
+                     schooling rate compared to developed nations, and if so, by how much of a gap?"),
+    h3("Analysis"),
+    p("We constructed totally three major tab to answer our three big question:"),
+    p("1. First tab goes deep into exploring the information and comparison in the schooling years
+      between different countries grouped by their continents throughut maps and bar charts visualization."),
+    p("2. Second tab builds the line graphs"),
+    p("3. Third tab ")),
              p("Our team project will answer the following questions for our honed audience:"), 
              p("1. Are there any difference in expected years of schooling for both male and female between different continents and different years in the world?"),
              p("2. How do male and female expected years of schooling rates compare over the years for all the countries with data available?"), 
@@ -44,7 +56,7 @@ ui <- fluidPage(
       an interactive bar plot that shows the expected years of schooling for the countries categorized by developed nations and developing nations. ")),
 
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
-    tabPanel(title = "Continents", value = "q1",  
+    tabPanel(title = "Continents", value = "q1",
              titlePanel(strong("Expected Years Of Schooling By Continents")),
              # A summary about these charts related to continent
              p("Are there any difference in expected years of schooling for both male and female between different 
@@ -59,11 +71,11 @@ ui <- fluidPage(
                the most significant difference. Furthermore, filtering the years helps us figure out
                the slight growth trendency in the number of schooling years in all continents of the world."),
              sidebarLayout(
-               # Side Panel 
+               # Side Panel
                sidebarPanel(
                  # Continent Filter (Using radio buttons type of widget)
-                 helpText(h6("Choose a continent or all continents. 
-                             The map and the bar chart will show the number of 
+                 helpText(h6("Choose a continent or all continents.
+                             The map and the bar chart will show the number of
                              schooling years in the selected continent or all continents")),
                  radioButtons(
                    "continent",
@@ -73,7 +85,7 @@ ui <- fluidPage(
                    selected = "All continents"
                  ),
                  ## Year Filter (Using drop down menu type of widget)
-                 helpText(h6("Choose a specific year. The map will show the number of 
+                 helpText(h6("Choose a specific year. The map will show the number of
                              schooling years in this year")),
                  selectInput(
                    "year",
@@ -96,34 +108,21 @@ ui <- fluidPage(
       )),
     tabPanel(title = "Female and Male", value = "q2",
              titlePanel("Female and Male Comparisons for Expected Years of Schooling Per Country"),
-             # A summary about these charts related to gender
-             p("How has the expected years of schooling changes per country between 1990 and 2017? 
-               How do these rates change when comparing between females and males?
-               Where does the world see trends of increased expected years of schooling and decreased expected years of schooling?"),
-             # A conclusion for the question about gender
-             p("For the most part, a majority of the world sees an upward trend of increased amount of expected years in schooling.
-               These increases between 1990 and 2017 show, on average, a 2-3 extra years of expected years in schooling.
-               This average increase is the same when isolating females and males, they both see about 2-3 additional years of expected schooling.
-               One interesting observation is that for a majority of countries, females receive on average 1-2 more expected years of schooling when compared to males.
-               Saudi Arabia is an interesting outlier, showing an increase of about 6 years in expected schooling between 1990 and 2017.
-               Some countries, like Nigeria, see sudden drops in expected year of schooling around 2005 to 2010, but overall these countries saw the same average increase.
-               All countries have seen the same trends of increased years of learning.
-               However it is interesting to note that developing countries lag behind developed countries by about 5 years in expected schooling."),
              sidebarLayout(
                sidebarPanel(
-                 
+
                  # Select button dataset of both female and male, female, or male
                  radioButtons(inputId = "femaleMaleSelect",
                               label = "Select Data of:",
                               choices = list("Both Female and Male", "Female", "Male"),
                               selected = "Both Female and Male"),
                  # Select an input range of years
-                 sliderInput(inputId = "femaleMaleYear", 
+                 sliderInput(inputId = "femaleMaleYear",
                              label = ("Year Range:"),
-                             sep = "", 
-                             min = 1990, 
-                             max = 2017, 
-                             value = c(1990, 2017), 
+                             sep = "",
+                             min = 1990,
+                             max = 2017,
+                             value = c(1990, 2017),
                              ticks = FALSE),
                  # Select input of country choice
                  selectInput(inputId = "femaleMaleCountry",
@@ -169,4 +168,4 @@ ui <- fluidPage(
              All donations will go towards building and supplying public schooling systems that are close to home.
              By helping third world countries raise up their expected years of schooling, countries will gain long term value that improves domestic standards of living, and in turn world-wide productivity."),
            p("A small donation today can make a world of difference tomorrow!"))
-))
+)
