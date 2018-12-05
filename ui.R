@@ -9,12 +9,9 @@ ui <- fluidPage(
   ),
   titlePanel("How education availability has changed between 1990 and 2017"),
   tabsetPanel(id = "main",
-<<<<<<< HEAD
     tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),
     tabPanel(title = "Creators", value = "creators", htmlOutput("creators")),
     tabPanel(title = "About", value = "intro", textOutput("intro")),
-    
-=======
     tabPanel(title = "Home", value = "home", htmlOutput("home")),
     tabPanel(title = "Creators", value = "creators", textOutput("creators")),
     tabPanel(title = "About", value = "intro", 
@@ -47,8 +44,6 @@ ui <- fluidPage(
       between different countries grouped by their continents throughut maps and bar charts visualization."),
     p("2. Second tab builds the line graphs"),
     p("3. Third tab ")),
-
->>>>>>> ce40cf3ba268d2c0d36dd223343db4aeeabd930d
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
     tabPanel(title = "Continents", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
