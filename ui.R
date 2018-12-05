@@ -119,6 +119,6 @@ ui <- fluidPage(
              ),
   tags$br()
   ),
-  tabPanel(title = "Eva's Question", value = "q3"),
+  tabPanel(title = "First and Third World", value = "q3"),
   tabPanel(title = "Donations", value = "donate", textOutput("donate"))
 ))
