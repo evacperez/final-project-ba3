@@ -46,9 +46,9 @@ server <- function(input, output, session) {
     "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
   })
 
-  output$intro <- renderText({
-    "An Introduction to our Project..."
-  })
+  # output$intro <- renderText({
+  #   "An Introduction to our Project..."
+  # })
   
   ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
   # Creating continent map output
