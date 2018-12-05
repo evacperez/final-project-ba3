@@ -7,7 +7,7 @@ library("ggplot2")
 library("maps")
 library("dplyr")
 library("countrycode")
-library(mapproj)
+library("mapproj")
 
 ## Setting current directory
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
