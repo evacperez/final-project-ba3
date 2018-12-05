@@ -8,6 +8,7 @@ ui <- fluidPage(
     tags$script(src = "index.js", type = "text/javascript")
   ),
   titlePanel("How education availability has changed between 1990 and 2017"),
+  
   tabsetPanel(id = "main",
     tabPanel(title = "Home", value = "home", htmlOutput("home")),
     tabPanel(title = "Creators", value = "creators", htmlOutput("creators")),
@@ -30,7 +31,6 @@ ui <- fluidPage(
                More often, these are individuals who are social scientists studying the relationship
                between human behavior and the levels of development in various countries across the world"),
              h3("Big Questions"),
-<<<<<<< HEAD
              p("Our team project will answer the following questions for our honed audience:"),
              p("1. Do Western nations have a higher or lower expected years of schooling rate compared to Eastern nations?"),
              p("2. How do male and female expected years of schooling rates compare over the years for all the countries with data available?"),
@@ -42,7 +42,6 @@ ui <- fluidPage(
       between different countries grouped by their continents throughut maps and bar charts visualization."),
     p("2. Second tab builds the line graphs"),
     p("3. Third tab ")),
-=======
              p("Our team project will answer the following questions for our honed audience:"), 
              p("1. Are there any difference in expected years of schooling for both male and female between different continents and different years in the world?"),
              p("2. How do male and female expected years of schooling rates compare over the years for all the countries with data available?"), 
@@ -55,23 +54,16 @@ ui <- fluidPage(
       How do these rates change when comparing between females and males?"),
     p("3. Third tab intakes the data on expected years of schooling for both males and females combined and outputs 
       an interactive bar plot that shows the expected years of schooling for the countries categorized by developed nations and developing nations. ")),
->>>>>>> 3c83f72e0910190c158d456b4dea3f190b1f0759
 
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
     tabPanel(title = "Continents", value = "q1",
              titlePanel(strong("Expected Years Of Schooling By Continents")),
              # A summary about these charts related to continent
-<<<<<<< HEAD
-             p("The following map and bar chart give the descriptive information
-                and comparison about the number of schooling years between different continents.
-                The map and chart can be filtered by a specific continent button or
-=======
              p("Are there any difference in expected years of schooling for both male and female between different 
                continents and different years in the world?"),
              p(" The following map and bar chart give the descriptive information
                 and comparison about the number of schooling years between different continents in different years. 
                 To explore the data visualization, the map and chart can be filtered by a specific continent button or 
->>>>>>> 3c83f72e0910190c158d456b4dea3f190b1f0759
                 all continents button as well as a specific year in the drop down menu."),
              # A conclusion for the question about continent
              p("Throughout the charts, we totally conclude that Europe continent has the smallest
@@ -142,11 +134,6 @@ ui <- fluidPage(
              ),
   tags$br()
   ),
-<<<<<<< HEAD
-  tabPanel(title = "First and Third World", value = "q3"),
-  tabPanel(title = "Donations", value = "donate", textOutput("donate"))
-))
-=======
   tabPanel(title = "Developing and Developed Nations", value = "q3",
            # Title of shiny app page
            titlePanel("UN Developed Nations vs. Developing Nations"),
@@ -181,5 +168,4 @@ ui <- fluidPage(
              All donations will go towards building and supplying public schooling systems that are close to home.
              By helping third world countries raise up their expected years of schooling, countries will gain long term value that improves domestic standards of living, and in turn world-wide productivity."),
            p("A small donation today can make a world of difference tomorrow!"))
-))
->>>>>>> 3c83f72e0910190c158d456b4dea3f190b1f0759
+)
