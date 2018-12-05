@@ -30,7 +30,7 @@ world_area$region[world_area$region == "UK"] <- "United Kingdom"
 server <- function(input, output, session) {
   observeEvent(input$controller, {
     updateTabsetPanel(session, "main",
-                      selected = "intro"
+                      selected = "creators"
     )
     print(input$controller)
   })
