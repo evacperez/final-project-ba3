@@ -24,11 +24,22 @@ body {
     margin-bottom: 24px;
 }
 
-.nav-tabs>li.active>a,
-.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a{
+    border: 0;
+    background-color: #b7a57a;
+    color: white;
+}
+
+
+.nav-tabs>li.active>a:focus{
+    border: 0;
+    background-color: #b7a57a;
+    color: #7CA7BE;
+}
+
 .nav-tabs>li.active>a:hover {
     border: 0;
-    background-color: #ff8000;
+    background-color: #7CA7BE;
     color: white;
 }
 
@@ -46,7 +57,7 @@ h2 {
 }
 
 #start-btn {
-    background-color: #ff8000;
+    background-color: #7CA7BE;
     padding: 20px 80px;
 }
 

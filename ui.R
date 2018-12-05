@@ -7,12 +7,48 @@ ui <- fluidPage(
     tags$link(rel = "stylesheet", type = "text/css", href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css"),
     tags$script(src = "index.js", type = "text/javascript")
   ),
-  titlePanel("Expected Years Of Schooling"),
+  titlePanel("How education availability has changed between 1990 and 2017"),
   tabsetPanel(id = "main",
+<<<<<<< HEAD
     tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),
     tabPanel(title = "Creators", value = "creators", htmlOutput("creators")),
     tabPanel(title = "About", value = "intro", textOutput("intro")),
     
+=======
+    tabPanel(title = "Home", value = "home", htmlOutput("home")),
+    tabPanel(title = "Creators", value = "creators", textOutput("creators")),
+    tabPanel(title = "About", value = "intro", 
+             titlePanel("About Our Project"),
+             p("Our project analyzes the trends of the UN’s database on expected years of schooling 
+               around the world. We divide up the information so our user can interact with the data to 
+               see how certain demographics have different levels of development."),
+             h3("Data"),
+             p("Our team worked on with “Human Development Data (1990-2017)”) from 
+               the United Nations Development Programme linked to the World Bank Dataset. 
+               Our project will be based on CSV files generated from there. 
+               We have chosen to study Education and analyze the three subcategories: 
+               Expected years of schooling (years), Expected years of schooling, female (years), 
+               Expected years of schooling, male (years)."),
+             a("The data can be found here", href = "http://hdr.undp.org/en/data"),
+             h3("Audience"),
+             p("The target audience would be economists devoted to education: 
+               people interested in demographics within the educational system throughout the nation. 
+               More often, these are individuals who are social scientists studying the relationship 
+               between human behavior and the levels of development in various countries across the world"),
+             h3("Big Questions"),
+             p("Our team project will answer the following questions for our honed audience:"), 
+             p("1. Do Western nations have a higher or lower expected years of schooling rate compared to Eastern nations?"),
+             p("2. How do male and female expected years of schooling rates compare over the years for all the countries with data available?"), 
+             p("3. When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of 
+                     schooling rate compared to developed nations, and if so, by how much of a gap?"),
+    h3("Analysis"),
+    p("We constructed totally three major tab to answer our three big question:"),
+    p("1. First tab goes deep into exploring the information and comparison in the schooling years
+      between different countries grouped by their continents throughut maps and bar charts visualization."),
+    p("2. Second tab builds the line graphs"),
+    p("3. Third tab ")),
+
+>>>>>>> ce40cf3ba268d2c0d36dd223343db4aeeabd930d
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
     tabPanel(title = "Continents", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
@@ -57,8 +93,8 @@ ui <- fluidPage(
                mainPanel(
                  # Creating the tab set for 2 different types of plots
                  tabsetPanel(type = "tabs",
-                             tabPanel("Map", plotOutput("continent_map", width = 900, height = 600)),
-                             tabPanel("Bar Chart", plotOutput("continent_bar", width = 900, height = 600))
+                             tabPanel("Map", plotOutput("continent_map", height = 600)),
+                             tabPanel("Bar Chart", plotOutput("continent_bar"))
                  )
                )
       )),
@@ -90,6 +126,6 @@ ui <- fluidPage(
              ),
   tags$br()
   ),
-  tabPanel(title = "Eva's Question", value = "q3"),
+  tabPanel(title = "First and Third World", value = "q3"),
   tabPanel(title = "Donations", value = "donate", textOutput("donate"))
 ))
