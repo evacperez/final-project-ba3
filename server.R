@@ -31,7 +31,7 @@ data$Country <- substring(data$Country, 2)
 server <- function(input, output, session) {
   observeEvent(input$controller, {
     updateTabsetPanel(session, "main",
-                      selected = "intro"
+                      selected = "creators"
     )
     print(input$controller)
   })
@@ -71,7 +71,7 @@ server <- function(input, output, session) {
       # Creating the world map 
       ggplot(world_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = world_data$year)) +
-        scale_fill_gradient(low="mediumpurple1",high="mediumpurple4") +
+        scale_fill_gradient(low = "#7CA7BE", high = "#36596C") +
         theme(plot.title = element_text(color = "black", face = "bold")) +
         theme(axis.title = element_text(color = "black", face = "bold")) +
         labs(title = paste("The number of schooling years in countries of", input$continent),
@@ -85,7 +85,7 @@ server <- function(input, output, session) {
       # Creating the specific continent map
       ggplot(continent_map_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = continent_map_data$year)) +
-        scale_fill_gradient(low="darkorange",high="darkorange4") +
+        scale_fill_gradient(low = "#7CA7BE", high = "#36596C") +
         theme(plot.title = element_text(color = "black", face = "bold")) +
         theme(axis.title = element_text(color = "black", face = "bold")) +
         labs(title = paste("The number of schooling years in countries of", input$continent),
@@ -102,7 +102,7 @@ server <- function(input, output, session) {
       colnames(world_bar_data)[3] <- "years"
       # Creating the world bar chart 
       plot <- ggplot(world_bar_data, aes(x = region, y = years)) +
-        geom_bar(stat = "identity", fill = "darkorange1") +
+        geom_bar(stat = "identity", fill = "#7CA7BE") +
         geom_text(
           aes(label = years, y = years + 0.05),
           position = position_dodge(0.9),
@@ -126,7 +126,7 @@ server <- function(input, output, session) {
       colnames(continent_bar_data)[3] <- "years"
       # Creating the continent bar chart
       plot <- ggplot(continent_bar_data, aes(x = region, y = years)) +
-        geom_bar(stat = "identity", fill = "darkorange1") +
+        geom_bar(stat = "identity", fill = "#7CA7BE") +
         geom_text(
           aes(label = years, y = years + 0.05),
           position = position_dodge(0.9),

@@ -16,7 +16,12 @@
         <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Jeff Zhang" data-placement="bottom">
             <img src="assets/profile.jpg" />
         </div>
-        <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Josely Anne Ongoco" data-placement="bottom">
+        <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Josely Anne Ongoco" data-placement="bottom"
+        data-content="
+            I am a graduating senior at the UW pursuing a major in Psychology and a minor in
+            Informatics. I am from the Philippines and in that country many graduate high school
+            at 16 years old.
+        ">
             <img src="assets/profile.jpg" />
         </div>
         <div class="col-xs-3 col-sm-3 img-container"  data-toggle="tooltip" title="Phuong Le" data-placement="bottom">
@@ -27,5 +32,6 @@
 <script>
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="tooltip"]').popover();
     });
 </script>
