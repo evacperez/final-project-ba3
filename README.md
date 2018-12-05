@@ -46,7 +46,7 @@ Our target audience is economists devoted to education: people interested in dem
 Our main page looks as follows:
 
 
-![Main Screen](mainpage.png)
+![Main Screen](mainpage2.png)
 
 
 We created a multipage shiny app, where each tab has a purpose in our overall application.
@@ -66,5 +66,4 @@ Our sixth tab introduces our third question, _When using the UN’s categorizati
 
 Our seventh tab include links to charities and other organization with aim in creating equity in education systems worldwide. Our goal is for people to recognize the patterns and feeling emotionally charged to take action in get involved in creating education systems that benefit all children.
 
-
-Public repository on GitHub: https://github.com/evagj/final-project-ba3
+Public repository on [GitHub](https://github.com/evagj/final-project-ba3).
