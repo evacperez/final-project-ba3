@@ -37,9 +37,9 @@ Our target audience is economists devoted to education: people interested in dem
 
 **How does each continent rank when comparing expected years of schooling rates?**
 
-**How do male and female expected years of schooling rates compare over the years for individual countries with data available?**
+**How do male and female expected years of schooling rates compare over the years for individual countries?**
 
-**When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of schooling rate compared to developed nations, and if so, by how much of a gap?**
+**When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of schooling rate compared to developed nations, and if so, does the gap decrease over time?**
 
 
 Our main page looks as follows:
@@ -57,10 +57,10 @@ In the first tab we visually introduce our topic of worldwide education. In the 
 Our fourth tab introduces our first question, _How does each continent rank when comparing expected years of schooling rates?_ We visually answer this with a select box and drop down widget, where the user can select each continent and what year of the data they want to see (1990-2017). We did not include Antarctica because there was no data for the continent. We display the chosen data with a map plot that has a range of colors relating to the rate of expected schooling. The user also has the option to view the rates in a bar chart format.
 
 
-Our fifth tab introduces our second question, _How do male and female expected years of schooling rates compare over the years for individual countries with data available?_ Our visualization for this question is a scatterplot that shows the rates of schooling over the collected years. The user has the choice of choosing which country to look at, and whether they want data for just females, just males, or data for both.
+Our fifth tab introduces our second question, _How do male and female expected years of schooling rates compare over the years for individual countries with data available?_ Our visualization for this question is a line plot that shows the rates of schooling over the collected years. The user has the choice of choosing which country to look at by using a drop down widget, and whether they want data for just females, just males, or data for both by using a radio button widget. Users can also select, using a slider widget, what years of data they would like included in the line plot
 
 
-Our sixth tab introduces our third question, _When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of schooling rate compared to developed nations, and if so, by how much of a gap?_ The UN's categorization can be found [here](https://unstats.un.org/unsd/methodology/m49/). This visualization displays a barchart where the user can choose between Developed and Developing countries and which year of data they prefer to see. The data displayed shows each country in the correct categorization and their comparing expected years of schooling rate for the selected year.
+Our sixth tab introduces our third question, _When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of schooling rate compared to developed nations, and if so, does the gap decrease over time?_ The UN's categorization can be found [here](https://unstats.un.org/unsd/methodology/m49/). This visualization displays a barchart where the user can choose between Developed and Developing countries, using a radio button widget, and which year of data they prefer to see, using a drop down widget. The data displayed shows each country in the correct categorization and their comparing expected years of schooling rate for the selected year.
 
 
 Our seventh tab include links to charities and other organization with aim in creating equity in education systems worldwide. Our goal is for people to recognize the patterns and feeling emotionally charged to take action in get involved in creating education systems that benefit all children.
