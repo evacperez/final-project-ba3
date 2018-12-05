@@ -7,9 +7,10 @@ ui <- fluidPage(
     tags$link(rel = "stylesheet", type = "text/css", href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css"),
     tags$script(src = "index.js", type = "text/javascript")
   ),
-  titlePanel("Expected Years Of Schooling"),
+  titlePanel("How education availability has changed between 1990 and 2017"),
   tabsetPanel(id = "main",
-    tabPanel(title = "EYOS", value = "home", htmlOutput("home")),
+    tabPanel(title = "Home", value = "home", htmlOutput("home")),
+    tabPanel(title = "Creators", value = "creators", textOutput("creators")),
     tabPanel(title = "About", value = "intro", 
              titlePanel("About Our Project"),
              p("Our project analyzes the trends of the UN’s database on expected years of schooling 
@@ -40,8 +41,6 @@ ui <- fluidPage(
       between different countries grouped by their continents throughut maps and bar charts visualization."),
     p("2. Second tab builds the line graphs"),
     p("3. Third tab ")),
-
-    tabPanel(title = "Creators", value = "creators", textOutput("creators")),
 
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
     tabPanel(title = "Continents", value = "q1",  
@@ -120,6 +119,6 @@ ui <- fluidPage(
              ),
   tags$br()
   ),
-  tabPanel(title = "Eva's Question", value = "q3"),
+  tabPanel(title = "First and Third World", value = "q3"),
   tabPanel(title = "Donations", value = "donate", textOutput("donate"))
 ))
