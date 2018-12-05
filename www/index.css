@@ -26,15 +26,15 @@ body {
 
 .nav-tabs>li.active>a{
     border: 0;
-    background-color: #b7a57a;
+    background-color: #7CA7BE;
     color: white;
 }
 
 
 .nav-tabs>li.active>a:focus{
     border: 0;
-    background-color: #b7a57a;
-    color: #7CA7BE;
+    background-color: #7CA7BE;
+    color: white;
 }
 
 .nav-tabs>li.active>a:hover {
