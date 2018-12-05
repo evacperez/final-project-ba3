@@ -35,7 +35,7 @@ Within these chosen subcategories the data includes variables for:
 
 Our target audience is economists devoted to education: people interested in demographics within the educational system throughout the nation. More often, these are individuals who are social scientists studying the relationship between human behavior and the levels of development in various countries across the world. Our project allows users to answer the following questions:
 
-**How does each continent rank when comparing expected years of schooling rates? **
+**How does each continent rank when comparing expected years of schooling rates?**
 
 **How do male and female expected years of schooling rates compare over the years for individual countries with data available?**
 
