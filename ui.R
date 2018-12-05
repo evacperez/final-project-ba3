@@ -96,8 +96,22 @@ ui <- fluidPage(
                  )
                )
       )),
+    
     tabPanel(title = "Female and Male", value = "q2",
              titlePanel("Female and Male Comparisons for Expected Years of Schooling Per Country"),
+             # A summary about these charts related to gender
+             p("How has the expected years of schooling changes per country between 1990 and 2017? 
+               How do these rates change when comparing between females and males?
+               Where does the world see trends of increased expected years of schooling and decreased expected years of schooling?"),
+             # A conclusion for the question about gender
+             p("For the most part, a majority of the world sees an upward trend of increased amount of expected years in schooling.
+               These increases between 1990 and 2017 show, on average, a 2-3 extra years of expected years in schooling.
+               This average increase is the same when isolating females and males, they both see about 2-3 additional years of expected schooling.
+               One interesting observation is that for a majority of countries, females receive on average 1-2 more expected years of schooling when compared to males.
+               Saudi Arabia is an interesting outlier, showing an increase of about 6 years in expected schooling between 1990 and 2017.
+               Some countries, like Nigeria, see sudden drops in expected year of schooling around 2005 to 2010, but overall these countries saw the same average increase.
+               All countries have seen the same trends of increased years of learning.
+               However it is interesting to note that developing countries lag behind developed countries by about 5 years in expected schooling."),
              sidebarLayout(
                sidebarPanel(
 
