@@ -67,7 +67,7 @@ ui <- fluidPage(
                              schooling years in the selected continent or all continents")),
                  radioButtons(
                    "continent",
-                   "Continent",
+                   "Continent:",
                    c("All continents", "Asia", "Africa", "Americas",
                      "Europe", "Oceania"),
                    selected = "All continents"
@@ -77,7 +77,7 @@ ui <- fluidPage(
                              schooling years in this year")),
                  selectInput(
                    "year",
-                   "Year",
+                   "Year:",
                    c("1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997",
                      "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005",
                      "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013",
