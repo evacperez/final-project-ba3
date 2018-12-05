@@ -68,10 +68,14 @@
     </a>
 </div>
 <div class="w-100" id="start-box">
-    <button class="btn btn-lg " id="start-btn" onclick="setPage('intro')">Start!</button>
+    <button class="btn btn-lg " id="start-btn">Start!</button>
 </div>
 <script>
     $('.carousel').carousel({
         interval: 4000
+    });
+
+    $('#start-btn').click(function() {
+        nextPage();
     });
 </script>

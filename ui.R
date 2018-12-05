@@ -158,5 +158,6 @@ ui <- fluidPage(
              All donations will go towards building and supplying public schooling systems that are close to home.
              By helping third world countries raise up their expected years of schooling, countries will gain long term value that improves domestic standards of living, and in turn world-wide productivity."),
            p("A small donation today can make a world of difference tomorrow!"))
-)
+),
+uiOutput("buttons")
 )

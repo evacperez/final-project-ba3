@@ -3,7 +3,12 @@
     $(document).on('ready', function(event) {
         console.log($('.tab-content').first().html());
         formatTabs();
+        Shiny.addCustomMessageHandler('page', function(message) {
+            currentPage = message;
+        });
     });
+
+
 
     function formatTabs() {
         let nav = $('ul').first();
@@ -23,7 +28,16 @@
     }
 })();
 
-function setPage(value) {
-    let time = Math.round(new Date());
-    Shiny.setInputValue('controller', time);
+var pages = ['home', 'creators', 'intro', 'q1', 'q2', 'q3', 'donate'];
+var currentPage = 'home';
+
+function nextPage() {
+    let index = pages.indexOf(currentPage);
+    let length = pages.length - 1;
+    let nextElement = pages[index];
+    if (index != length) {
+        nextElement = pages[index + 1];
+    }
+
+    Shiny.setInputValue('controller', nextElement);
 }

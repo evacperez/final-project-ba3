@@ -31,10 +31,14 @@ data$Country <- substring(data$Country, 2)
 server <- function(input, output, session) {
   observeEvent(input$controller, {
     updateTabsetPanel(session, "main",
-                      selected = "creators"
+                      selected = input$controller
     )
-    print(input$controller)
   })
+  
+  observeEvent(input$main, {
+    session$sendCustomMessage('page', input$main)
+  })
+
   
   ## Home tabPanel Output
   output$home <- renderUI({
@@ -196,6 +200,21 @@ server <- function(input, output, session) {
         ylab("Expected Years of Schooling") + 
         ggtitle(paste0(input$nations, " Nations Expected Years of Schooling in ",
                        input$years))
+    }
+  })
+  
+  output$buttons <- renderUI({
+    if (input$main != "home" & input$main != "donate") {
+      HTML('
+        <div>
+          <button class="btn next-btn">Next >></button>
+        </div>
+        <script>
+          $(".next-btn").click(function() {
+            nextPage();
+          })
+        </script>
+      ')
     }
   })
 }

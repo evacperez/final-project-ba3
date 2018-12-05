@@ -58,6 +58,7 @@ body {
 
 h2 {
     margin-bottom: 32px;
+    font-weight: bold;
 }
 
 #start-btn {
@@ -98,4 +99,17 @@ h2 {
 
 .popover {
     color: black;
+}
+
+#buttons {
+    margin-top: 32px;
+    text-align: center;
+    margin-bottom: 32px;
+
+}
+
+#buttons .btn {
+    background-color: #7CA7BE;
+    color: white;
+    padding: 10px 30px;
 }
