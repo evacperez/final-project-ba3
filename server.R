@@ -10,7 +10,7 @@ library("countrycode")
 library("mapproj")
 
 ## Setting current directory
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ## Setting html homepage
 file_name <- "www/carousel.html"

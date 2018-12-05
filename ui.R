@@ -1,5 +1,5 @@
 library(shiny)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#etwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ui <- fluidPage(
   tags$head(
