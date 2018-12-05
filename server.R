@@ -183,7 +183,7 @@ server <- function(input, output, session) {
         xlab("UN Countries from Data") +
         ylab("Expected Years of Schooling") + 
         ggtitle(paste0(input$nations, " Nations Expected Years of Schooling in ",
-                       input$year))
+                       input$years))
       
     } else {
       # All other countries are listed as developing, again, going off the UN classification list.
