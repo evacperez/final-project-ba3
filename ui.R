@@ -9,6 +9,7 @@ ui <- fluidPage(
   ),
   titlePanel("Expected Years Of Schooling"),
   tabsetPanel(id = "main",
+<<<<<<< HEAD
     tabPanel(title = "EYOS", value = "home", htmlOutput("home")),
     tabPanel(title = "About", value = "intro", 
              titlePanel("About Our Project"),
@@ -41,8 +42,14 @@ ui <- fluidPage(
     p("2. Second tab builds the line graphs"),
     p("3. Third tab ")),
 
+=======
+    tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),
+    tabPanel(title = "Creators", value = "creators", textOutput("creators")),
+    tabPanel(title = "About", value = "intro", textOutput("intro")),
+    
+>>>>>>> 9183d6ba31adf668687c000fb9b6179e3784aa79
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
-    tabPanel(title = "Continent", value = "q1",  
+    tabPanel(title = "Continents", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
              # A summary about these charts related to continent
              p("The following map and bar chart give the descriptive information
@@ -117,5 +124,7 @@ ui <- fluidPage(
                mainPanel(plotOutput("q2"))
              ),
   tags$br()
-  )
+  ),
+  tabPanel(title = "Eva's Question", value = "q3"),
+  tabPanel(title = "Donations", value = "donate", textOutput("donate"))
 ))
