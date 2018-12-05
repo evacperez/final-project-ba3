@@ -59,3 +59,20 @@ h2 {
 .form-group {
   color: black;
 }
+
+.profile-row img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 32px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.tooltip > .tooltip-inner {
+    background-color: white;
+    color: black;
+}

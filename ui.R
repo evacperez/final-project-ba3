@@ -10,7 +10,7 @@ ui <- fluidPage(
   titlePanel("Expected Years Of Schooling"),
   tabsetPanel(id = "main",
     tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),
-    tabPanel(title = "Creators", value = "creators", textOutput("creators")),
+    tabPanel(title = "Creators", value = "creators", htmlOutput("creators")),
     tabPanel(title = "About", value = "intro", textOutput("intro")),
     
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)

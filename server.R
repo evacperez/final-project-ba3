@@ -42,8 +42,12 @@ server <- function(input, output, session) {
     )
   })
   
-  output$creators <- renderText({
+  output$creators <- renderUI({
     "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
+    about_file <- "www/about.html"
+    about_html <- readChar(about_file, file.info(file_name)$size)
+    
+    HTML(about_html)
   })
 
   # output$intro <- renderText({
