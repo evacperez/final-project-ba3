@@ -38,7 +38,6 @@ server <- function(input, output, session) {
   observeEvent(input$main, {
     session$sendCustomMessage('page', input$main)
   })
-
   
   ## Home tabPanel Output
   output$home <- renderUI({
@@ -51,7 +50,6 @@ server <- function(input, output, session) {
     "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
     about_file <- "www/about.html"
     about_html <- readChar(about_file, file.info(file_name)$size)
-    
     HTML(about_html)
   })
 
