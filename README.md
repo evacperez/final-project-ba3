@@ -45,7 +45,7 @@ Our target audience is economists devoted to education: people interested in dem
 Our main page looks as follows:
 
 
-![Main Screen](../mainpage.png)
+![Main Screen](mainpage.png)
 
 
 We created a multipage shiny app, where each tab has a purpose in our overall application.
