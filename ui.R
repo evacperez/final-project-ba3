@@ -166,10 +166,10 @@ ui <- fluidPage(
   tabPanel(title = "Donations", value = "donate", 
            titlePanel("Please donate $1 to help children around the world receive a fair education."),
            # A summary about how donating will help
-           p("Children in developing nations need your help to have a chance at receiving a fair education.
-             All donations will go towards building and supplying public schooling systems that are close to home.
-             By helping developing nations raise their rates of expected years of schooling, countries will gain long 
-             term value that improves domestic standards of living, and in turn world-wide productivity."),
+           p("Children in developing nations need your help to have a chance at receiving an equitable education.
+             All donations will go towards aiding and supporting schooling systems close to home and abroad.
+             In particular, by helping developing nations raise their rates of expected years of schooling, countries
+             will gain long term value that improves domestic standards of living, and in turn world-wide productivity."),
            p("A small donation today can make a world of difference tomorrow!"),
            p("Here are some charities you may consider donating to:"),
            a("Save the Children", href = "https://www.savethechildren.org/us/what-we-do/global-programs/education"),
