@@ -1,4 +1,3 @@
-
 ## This is the server logic of a Shiny web application. 
 source("q2.R")
 
@@ -9,6 +8,7 @@ library("maps")
 library("dplyr")
 library("countrycode")
 library(mapproj)
+
 ## Setting current directory
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
@@ -28,7 +28,6 @@ world_area$region[world_area$region == "UK"] <- "United Kingdom"
 
 ## Defining server 
 server <- function(input, output, session) {
-  ## 
   observeEvent(input$controller, {
     updateTabsetPanel(session, "main",
                       selected = "intro"
@@ -41,17 +40,15 @@ server <- function(input, output, session) {
     tags$div(
       HTML(homepage_html)
     )
-    #session$sendCustomMessage("finishHandler", "finished")
   })
   
-
   output$creators <- renderText({
     "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
   })
 
-  output$intro <- renderText({
-    "An Introduction to our Project..."
-  })
+  # output$intro <- renderText({
+  #   "An Introduction to our Project..."
+  # })
   
   ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
   # Creating continent map output
@@ -60,36 +57,41 @@ server <- function(input, output, session) {
     world_data <- world_area %>% 
       full_join(map_data, by = "region") 
     
+    # If-else statement to filter All continents or a continent
     if (input$continent == "All continents"){
+      # Filtering data for the world map
       world_data <- select(world_data, long, lat, group, order, region, 
                            subregion, Continent, paste0("X", input$year))
       colnames(world_data)[8] <- "year"
-      
+      # Creating the world map 
       ggplot(world_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = world_data$year)) +
         scale_fill_gradient(low="mediumpurple1",high="mediumpurple4") +
         labs(title = paste("The number of schooling years in countries of", input$continent),
-             fill = "Schooling Years (years)") + coord_quickmap()
+             fill = "Schooling Years (years)") 
     }
     else {
+      # Filtering data for the continent map
       continent_map_data <- world_data %>%
         filter(Continent == input$continent) 
       colnames(continent_map_data)[8] <- "year"
-      
+      # Creating the specific continent map
       ggplot(continent_map_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = continent_map_data$year)) +
         scale_fill_gradient(low="darkorange",high="darkorange4") +
         labs(title = paste("The number of schooling years in countries of", input$continent),
-             fill = "Schooling Years (years)")  + coord_quickmap()
+             fill = "Schooling Years (years)")  
     }
   })
   
   ## Creating continent bar chart output
   output$continent_bar <- renderPlot({
     if (input$continent == "All continents"){
+      # Filtering data for world bar chart
       world_bar_data <- updated_data %>% 
         select(region, Continent, paste0("X", input$year))
       colnames(world_bar_data)[3] <- "years"
+      # Creating the world bar chart 
       plot <- ggplot(world_bar_data, aes(x = region, y = years)) +
         geom_bar(stat = "identity", fill = "darkorange1") +
         geom_text(
@@ -106,10 +108,12 @@ server <- function(input, output, session) {
                             around the world")
     }
     else {
+      # Filtering data for a continent bar chart
       continent_bar_data <- updated_data %>% 
         filter(Continent == input$continent) %>%
         select(region, Continent, paste0("X", input$year))
       colnames(continent_bar_data)[3] <- "years"
+      # Creating the continent bar chart
       plot <- ggplot(continent_bar_data, aes(x = region, y = years)) +
         geom_bar(stat = "identity", fill = "darkorange1") +
         geom_text(
