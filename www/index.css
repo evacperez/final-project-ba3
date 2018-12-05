@@ -26,15 +26,15 @@ body {
 
 .nav-tabs>li.active>a{
     border: 0;
-    background-color: #b7a57a;
+    background-color: #7CA7BE;
     color: white;
 }
 
 
 .nav-tabs>li.active>a:focus{
     border: 0;
-    background-color: #b7a57a;
-    color: #7CA7BE;
+    background-color: #7CA7BE;
+    color: white;
 }
 
 .nav-tabs>li.active>a:hover {
@@ -69,4 +69,21 @@ h2 {
 
 .form-group {
   color: black;
+}
+
+.profile-row img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 32px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.tooltip > .tooltip-inner {
+    background-color: white;
+    color: black;
 }

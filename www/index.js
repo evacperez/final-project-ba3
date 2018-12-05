@@ -24,5 +24,6 @@
 })();
 
 function setPage(value) {
-    Shiny.setInputValue('controller', value);
+    let time = Math.round(new Date());
+    Shiny.setInputValue('controller', time);
 }

@@ -42,8 +42,12 @@ server <- function(input, output, session) {
     )
   })
   
-  output$creators <- renderText({
+  output$creators <- renderUI({
     "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
+    about_file <- "www/about.html"
+    about_html <- readChar(about_file, file.info(file_name)$size)
+    
+    HTML(about_html)
   })
 
   # output$intro <- renderText({
@@ -67,6 +71,8 @@ server <- function(input, output, session) {
       ggplot(world_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = world_data$year)) +
         scale_fill_gradient(low="mediumpurple1",high="mediumpurple4") +
+        theme(plot.title = element_text(color = "black", face = "bold")) +
+        theme(axis.title = element_text(color = "black", face = "bold")) +
         labs(title = paste("The number of schooling years in countries of", input$continent),
              fill = "Schooling Years (years)") 
     }
@@ -79,6 +85,8 @@ server <- function(input, output, session) {
       ggplot(continent_map_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = continent_map_data$year)) +
         scale_fill_gradient(low="darkorange",high="darkorange4") +
+        theme(plot.title = element_text(color = "black", face = "bold")) +
+        theme(axis.title = element_text(color = "black", face = "bold")) +
         labs(title = paste("The number of schooling years in countries of", input$continent),
              fill = "Schooling Years (years)")  
     }
@@ -102,6 +110,8 @@ server <- function(input, output, session) {
           size = 2) +  
         scale_y_continuous(breaks=c(seq(0, 25, 3)), limits = c(0, 25)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 6)) +
+        theme(plot.title = element_text(color = "black", face = "bold")) +
+        theme(axis.title = element_text(color = "black", face = "bold")) +
         ylab("The number of schooling years") +
         xlab("All countries in the world") +
         labs(title = "The number of schooling years in all countries 
@@ -124,6 +134,8 @@ server <- function(input, output, session) {
           size = 3) +  
         scale_y_continuous(breaks=c(seq(0, 25, 3)), limits = c(0, 25)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+        theme(plot.title = element_text(color = "black", face = "bold")) +
+        theme(axis.title = element_text(color = "black", face = "bold")) +
         ylab("The number of schooling years") +
         xlab(paste0("Countries in ", input$continent, " continent")) +
         labs(title = paste0("The number of schooling years in countries in ",
