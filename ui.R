@@ -134,7 +134,33 @@ ui <- fluidPage(
              ),
   tags$br()
   ),
-  tabPanel(title = "First and Third World", value = "q3"),
+  tabPanel(title = "Developing and Developed Nations", value = "q3",
+           # Title of shiny app page
+           titlePanel("UN Developed Nations vs. Developing Nations"),
+           
+           # Creates sidebar layout 
+           sidebarLayout(
+             sidebarPanel(
+               
+               # Created radio buttons to choose Developed or Developing
+               radioButtons(inputId = "nations",
+                            "Data On:",
+                            choices = list("Developed", "Developing"),
+                            selected = "Developed"),
+               
+               # Creates select box widget for the given years in the data set of 
+               # UN nations from server.R data.
+               selectInput(inputId = "years",
+                           label = "Years:",
+                           choices = 1990:2017)
+             ),
+             
+             # Creates area where bar plot will be displayed
+             mainPanel(
+               plotOutput("barPlot")
+             )
+           )
+           ),
   tabPanel(title = "Donations", value = "donate", 
            titlePanel("Please donate $1 to help children in developing countries receive a fair education."),
            # A summary about how donating will help
