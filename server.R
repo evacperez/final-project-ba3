@@ -100,8 +100,8 @@ server <- function(input, output, session) {
           vjust = 0,
           color = "grey34",
           size = 2) +  
-        scale_y_continuous(breaks=c(seq(0, 15, 1)), limits = c(0, 25)) +
-        theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 5)) +
+        scale_y_continuous(breaks=c(seq(0, 25, 3)), limits = c(0, 25)) +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 6)) +
         ylab("The number of schooling years") +
         xlab("All countries in the world") +
         labs(title = "The number of schooling years in all countries 
@@ -122,7 +122,7 @@ server <- function(input, output, session) {
           vjust = 0,
           color = "grey34",
           size = 3) +  
-        scale_y_continuous(breaks=c(seq(0, 15, 1)), limits = c(0, 25)) +
+        scale_y_continuous(breaks=c(seq(0, 25, 3)), limits = c(0, 25)) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
         ylab("The number of schooling years") +
         xlab(paste0("Countries in ", input$continent, " continent")) +
@@ -137,4 +137,5 @@ server <- function(input, output, session) {
     ExpectedYearsOfSchooling(input$femaleMaleSelect, input$femaleMaleYear[1], 
                              input$femaleMaleYear[2], input$femaleMaleCountry)
   })
+  
 }
