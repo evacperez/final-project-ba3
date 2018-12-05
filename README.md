@@ -1,4 +1,4 @@
-#Final Project, Team BA3
+# Final Project, Team BA3
 	
 	Eva Perez
 	Jeff Zhang
