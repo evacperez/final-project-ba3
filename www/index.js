@@ -20,12 +20,12 @@
             link.empty();
             link.append('<div>' + content + '</div>');
 
-            if (i != nav.children().length - 1) {
-                let icon = $('<i class="fas fa-chevron-right"></i>');
-                icon.css('float', 'right');
-
-                link.append(icon);
-            }
+            // if (i != nav.children().length - 1) {
+            //     let icon = $('<i class="fas fa-chevron-right"></i>');
+            //     icon.css('float', 'right');
+            //
+            //     link.append(icon);
+            // }
         }
 
         let percentage = (100 / nav.children().length) + "%";
