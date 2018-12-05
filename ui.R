@@ -11,7 +11,6 @@ ui <- fluidPage(
   tabsetPanel(id = "main",
     tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),
     tabPanel(title = "Creators", value = "creators", htmlOutput("creators")),
-    tabPanel(title = "About", value = "intro", textOutput("intro")),
     tabPanel(title = "About", value = "intro", 
              titlePanel("About Our Project"),
              p("Our project analyzes the trends of the UN’s database on expected years of schooling 
