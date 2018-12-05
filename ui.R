@@ -13,19 +13,22 @@ ui <- fluidPage(
     tabPanel(title = "Introduction", value = "intro", textOutput("intro")),
     
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
-    tabPanel(title = "Key Question #1", value = "q1",  
+    tabPanel(title = "Continent", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
+             # A summary about these charts related to continent
              p("The following map and bar chart give the descriptive information
                 and comparison about the number of schooling years between different continents. 
                 The map and chart can be filtered by a specific continent button or 
                 all continents button as well as a specific year in the drop down menu."),
+             # A conclusion for the question about continent
              p("Throughout the charts, we totally conclude that Europe continent has the smallest
                difference between countries in the number of schooling years, whereas Africa witnesses
                the most significant difference. Furthermore, filtering the years helps us figure out
                the slight growth trendency in the number of schooling years in all continents."),
              sidebarLayout(
+               # Side Panel 
                sidebarPanel(
-                 ## Continent Filter
+                 # Continent Filter (Using radio buttons type of widget)
                  helpText(h6("Choose a continent or all continents. 
                              The map and the bar chart will show the number of 
                              schooling years in the selected continent or all continents")),
@@ -36,7 +39,7 @@ ui <- fluidPage(
                      "Europe", "Oceania"),
                    selected = "All continents"
                  ),
-                 ## Year Filter
+                 ## Year Filter (Using drop down menu type of widget)
                  helpText(h6("Choose a specific year. The map will show the number of 
                              schooling years in this year")),
                  selectInput(
@@ -49,7 +52,9 @@ ui <- fluidPage(
                    selected = "1990"
                  )
                  ),
+               # Main Panel
                mainPanel(
+                 # Creating the tab set for 2 different types of plots
                  tabsetPanel(type = "tabs",
                              tabPanel("Map", plotOutput("continent_map", width = 900, height = 600)),
                              tabPanel("Bar Chart", plotOutput("continent_bar", width = 900, height = 600))
