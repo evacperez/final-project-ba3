@@ -124,9 +124,12 @@ ui <- fluidPage(
              ),
   tags$br()
   ),
+  
+  #Start for Question 3
   tabPanel(title = "Developing and Developed Nations", value = "q3",
            # Title of shiny app page
            titlePanel(strong("UN Developed Nations vs. Developing Nations")),
+           # Introduces purpose and where categories are from.
            p("This visualization displays a barchart where the user can choose between Developed and 
              Developing countries and which year of data they prefer to see. The data displayed shows 
              each country in the correct categorization and their comparing expected years of schooling 
@@ -159,6 +162,7 @@ ui <- fluidPage(
              )
            )
            ),
+  
   tabPanel(title = "Donations", value = "donate", 
            titlePanel("Please donate $1 to help children in developing countries receive a fair education."),
            # A summary about how donating will help
