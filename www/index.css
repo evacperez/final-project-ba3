@@ -25,31 +25,45 @@ body {
     width: 100%;
     background-color: white;
     margin-bottom: 24px;
+    display: flex;
+    align-items: center;
 }
 
-.nav-tabs>li.active>a{
+.nav-tabs > li.active > a{
+    border: 0;
+    background-color: #7CA7BE;
+}
+
+
+.nav-tabs > li.active > a:focus{
     border: 0;
     background-color: #7CA7BE;
     color: white;
 }
 
-
-.nav-tabs>li.active>a:focus{
-    border: 0;
-    background-color: #7CA7BE;
-    color: white;
-}
-
-.nav-tabs>li.active>a:hover {
+.nav-tabs > li.active > a:hover {
     border: 0;
     background-color: #7CA7BE;
     color: white;
 }
 
 .nav-tabs > li {
-    margin-bottom: -3px;
     width: 15%;
     text-align: center;
+        color: #7CA7BE;
+}
+
+.nav-tabs a {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-tabs a > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .nav-tabs > li > a {
@@ -59,6 +73,7 @@ body {
 h2 {
     margin-bottom: 32px;
     font-weight: bold;
+    text-align: center;
 }
 
 #start-btn {
@@ -77,8 +92,8 @@ h2 {
 }
 
 .profile-row img {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
     margin-top: 32px;
 }
@@ -91,10 +106,6 @@ h2 {
 .tooltip > .tooltip-inner {
     background-color: white;
     color: black;
-}
-
-.fa-chevron-right {
-    margin-top: 3px;
 }
 
 .popover {
@@ -112,4 +123,33 @@ h2 {
     background-color: #b7a57a;
     color: white;
     padding: 10px 30px;
+}
+
+#globe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 200px;
+    width: auto;
+}
+
+.donate-img {
+    height: 80px;
+    width: auto;
+}
+
+#donate-main-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: auto;
+    margin-bottom: 24px;
+}
+
+#quote {
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
 }

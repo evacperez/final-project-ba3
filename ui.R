@@ -7,13 +7,14 @@ ui <- fluidPage(
     tags$link(rel = "stylesheet", type = "text/css", href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css"),
     tags$script(src = "index.js", type = "text/javascript")
   ),
-  titlePanel("How education availability has changed between 1990 and 2017"),
+  titlePanel("How Education Accessibility Has Changed Worldwide"),
   
   tabsetPanel(id = "main",
     tabPanel(title = "Home", value = "home", htmlOutput("home")),
     tabPanel(title = "Creators", value = "creators", htmlOutput("creators")),
     tabPanel(title = "About", value = "intro",
              titlePanel("About Our Project"),
+             img(src = "assets/globe.png", alt = "globe", id = "globe"),
              p("Our project analyzes the trends of the UN’s database on expected years of schooling
                around the world. We have filtered the information so our user can interact with the data to
                see how certain demographics have different levels of development."),
@@ -202,19 +203,20 @@ ui <- fluidPage(
   tabPanel(title = "Donations", value = "donate", 
            titlePanel("Please donate $1 to help children around the world receive a fair education."),
            # A summary about how donating will help
-           p("Children in developing nations need your help to have a chance at receiving an equitable education.
+           img(src = "assets/donate0.png", id = "donate-main-img"),
+           p( "Children in developing nations need your help to have a chance at receiving an equitable education.
              All donations will go towards aiding and supporting schooling systems close to home and abroad.
              In particular, by helping developing nations raise their rates of expected years of schooling, countries
              will gain long term value that improves domestic standards of living, and in turn world-wide productivity."),
-           p("A small donation today can make a world of difference tomorrow!"),
+           p("A small donation today can make a world of difference tomorrow!", id = "quote"),
            p("Here are some charities you may consider donating to:"),
-           a("Save the Children", href = "https://www.savethechildren.org/us/what-we-do/global-programs/education"),
+           a(img(src = "assets/donate1.png", class = "donate-img"), href = "https://www.savethechildren.org/us/what-we-do/global-programs/education"),
            p(),
-           a("Global Girls Alliance", href = "https://www.obama.org/globalgirlsalliance/"),
+           a(img(src = "assets/donate2.png", class = "donate-img"), href = "https://www.obama.org/globalgirlsalliance/"),
            p(),
            p("To learn more about current issues in education systems, consider visiting the site of 
              Educational International for news updates on education around the world."),
-           a("Education International", href = "https://www.ei-ie.org/"))
+           a(img(src = "assets/donate3.png", class = "donate-img"), href = "https://www.ei-ie.org/"))
 ),
 uiOutput("buttons")
 )

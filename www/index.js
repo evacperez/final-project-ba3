@@ -14,15 +14,20 @@
         let nav = $('ul').first();
         for (let i = 0; i < nav.children().length; i++) {
             let tab = nav.children().eq(i);
+            let link = tab.children().first();
+            let content = link.text();
+
+            link.empty();
+            link.append('<div>' + content + '</div>');
 
             if (i != nav.children().length - 1) {
-                let link = tab.children().first();
                 let icon = $('<i class="fas fa-chevron-right"></i>');
                 icon.css('float', 'right');
 
                 link.append(icon);
             }
         }
+
         let percentage = (100 / nav.children().length) + "%";
         nav.children().css('width', percentage);
     }
