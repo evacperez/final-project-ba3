@@ -70,7 +70,7 @@ server <- function(input, output, session) {
       # Creating the world map 
       ggplot(world_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = world_data$year)) +
-        scale_fill_gradient(low = "#BEAB87", high = "#7A6942") +
+        scale_fill_gradient(low = "#7CA7BE", high = "#36596C") +
         theme(plot.title = element_text(color = "black", face = "bold")) +
         theme(axis.title = element_text(color = "black", face = "bold")) +
         labs(title = paste("The number of schooling years in countries of", input$continent),
@@ -84,7 +84,7 @@ server <- function(input, output, session) {
       # Creating the specific continent map
       ggplot(continent_map_data, aes(x = long, y = lat, group = group)) +
         geom_polygon(aes(fill = continent_map_data$year)) +
-        scale_fill_gradient(low = "#BEAB87", high = "#7A6942") +
+        scale_fill_gradient(low = "#7CA7BE", high = "#36596C") +
         theme(plot.title = element_text(color = "black", face = "bold")) +
         theme(axis.title = element_text(color = "black", face = "bold")) +
         labs(title = paste("The number of schooling years in countries of", input$continent),

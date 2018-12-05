@@ -40,13 +40,9 @@ ui <- fluidPage(
     p("1. First tab goes deep into exploring the information and comparison in the schooling years
       between different countries grouped by their continents throughut maps and bar charts visualization."),
     p("2. Second tab builds the line graphs"),
-<<<<<<< HEAD
     p("3. Third tab intakes the data on expected years of schooling for both males and females combined and outputs 
       an interactive bar plot that shows the expected years of schooling for the countries categorized by developed nations and developing nations. ")),
 
-=======
-    p("3. Third tab ")),
->>>>>>> 5e9a8f0da375c231ce204a5150983a1c643fa8f7
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
     tabPanel(title = "Continents", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
