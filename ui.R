@@ -10,10 +10,11 @@ ui <- fluidPage(
   titlePanel("Expected Years Of Schooling"),
   tabsetPanel(id = "main",
     tabPanel(title = "Welcome!", value = "home", htmlOutput("home")),
-    tabPanel(title = "Introduction", value = "intro", textOutput("intro")),
+    tabPanel(title = "Creators", value = "creators", textOutput("creators")),
+    tabPanel(title = "About", value = "intro", textOutput("intro")),
     
     ## YEARS OF SCHOOLING BY CONTINENTS (QUESTION 1)
-    tabPanel(title = "Key Question #1", value = "q1",  
+    tabPanel(title = "Continents", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
              p("The following map and bar chart give the descriptive information
                 and comparison about the number of schooling years between different continents. 
@@ -83,5 +84,7 @@ ui <- fluidPage(
                mainPanel(plotOutput("q2"))
              ),
   tags$br()
-  )
+  ),
+  tabPanel(title = "Eva's Question", value = "q3"),
+  tabPanel(title = "Donations", value = "donate", textOutput("donate"))
 ))

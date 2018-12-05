@@ -45,7 +45,7 @@ server <- function(input, output, session) {
   })
   
 
-  output$create <- renderText({
+  output$creators <- renderText({
     "Project Creators: Eva Perez, Jeff Zhang, Joselly Anne Ongoco, Phuong Le"
   })
 
