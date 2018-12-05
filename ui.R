@@ -31,15 +31,15 @@ ui <- fluidPage(
                between human behavior and the levels of development in various countries across the world"),
              h3("Big Questions"),
              p("Our team project will answer the following questions for our honed audience:"), 
-             p("1. Do Western nations have a higher or lower expected years of schooling rate compared to Eastern nations?"),
+             p("1. Are there any difference in expected years of schooling for both male and female between different continents and different years in the world?"),
              p("2. How do male and female expected years of schooling rates compare over the years for all the countries with data available?"), 
-             p("3. When using the UN’s categorization of developed and developing nations, do developing nations have a lower expected years of 
-                     schooling rate compared to developed nations, and if so, by how much of a gap?"),
+             p("3. Do developing nations have a lower expected years of schooling rate compared to developed nations, and if so, by how much of a gap?"),
     h3("Analysis"),
     p("We constructed totally three major tab to answer our three big question:"),
     p("1. First tab goes deep into exploring the information and comparison in the schooling years
-      between different countries grouped by their continents throughut maps and bar charts visualization."),
-    p("2. Second tab builds the line graphs"),
+      between different countries grouped by their continents as well as filtered in a specific year throughut maps and bar charts visualization."),
+    p("2. Second tab builds the line graphs to answer questions: How has the expected years of schooling changes per country between 1990 and 2017? 
+      How do these rates change when comparing between females and males?"),
     p("3. Third tab intakes the data on expected years of schooling for both males and females combined and outputs 
       an interactive bar plot that shows the expected years of schooling for the countries categorized by developed nations and developing nations. ")),
 
@@ -47,15 +47,16 @@ ui <- fluidPage(
     tabPanel(title = "Continents", value = "q1",  
              titlePanel(strong("Expected Years Of Schooling By Continents")),
              # A summary about these charts related to continent
-             p("The following map and bar chart give the descriptive information
-                and comparison about the number of schooling years between different continents. 
-                The map and chart can be filtered by a specific continent button or 
+             p("Are there any difference in expected years of schooling for both male and female between different continents and different years in the world?"),
+             p(" The following map and bar chart give the descriptive information
+                and comparison about the number of schooling years between different continents in different years. 
+                To explore the data visualization, the map and chart can be filtered by a specific continent button or 
                 all continents button as well as a specific year in the drop down menu."),
              # A conclusion for the question about continent
              p("Throughout the charts, we totally conclude that Europe continent has the smallest
                difference between countries in the number of schooling years, whereas Africa witnesses
                the most significant difference. Furthermore, filtering the years helps us figure out
-               the slight growth trendency in the number of schooling years in all continents."),
+               the slight growth trendency in the number of schooling years in all continents of the world."),
              sidebarLayout(
                # Side Panel 
                sidebarPanel(
