@@ -10,7 +10,7 @@ Professor Ott Toomet
 INFO 201
 04 December, 2018
 
-View at: [https://hljzhang.shinyapps.io/final-project-ba3/](https://hljzhang.shinyapps.io/final-project-ba3/)
+View at app at [shinyapp.io](https://evaperez.shinyapps.io/final-project-ba3/)
 
 ## Project Summary
 Our project is to analyze the “Human Development Data (1990-2017)” from the United Nations Development Programme linked to the World Bank Dataset. Starting in 1990, the United Nations Human development program collects data on multiple aspects regarding its member countries. The data includes a country’s level of inequality, education level, healthcare, and income level to track a countries progress in development.  The data can be found [here](http://hdr.undp.org/en/data). 

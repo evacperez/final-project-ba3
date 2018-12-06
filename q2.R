@@ -8,11 +8,11 @@ ExpectedYearsOfSchooling <- function(femaleMaleSelect, yearStart, yearEnd, femal
   data <- NULL
   # Select correct dataset
   if (femaleMaleSelect == "Both Female and Male") {
-    data <- read.csv("./data/Expected years of schooling (years).csv", stringsAsFactors = FALSE)
+    data <- read.csv("./Data/Expected years of schooling (years).csv", stringsAsFactors = FALSE)
   } else if (femaleMaleSelect == "Female") {
-    data <- read.csv("./data/Expected years of schooling, female (years).csv", stringsAsFactors = FALSE)
+    data <- read.csv("./Data/Expected years of schooling, female (years).csv", stringsAsFactors = FALSE)
   } else {
-    data <- read.csv("./data/Expected years of schooling, male (years).csv", stringsAsFactors = FALSE)
+    data <- read.csv("./Data/Expected years of schooling, male (years).csv", stringsAsFactors = FALSE)
   }
   # Eliminate nulls
   df <- na.omit(data)
